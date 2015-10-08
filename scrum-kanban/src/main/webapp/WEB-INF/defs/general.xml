@@ -9,19 +9,19 @@
     </definition>
     
     <definition name="index" extends="common">
-         <put-attribute name="title" value="Gestion des ateliers" />
+         <put-attribute name="title" value="Scrum Manager" />
     	 <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
     	 <put-attribute name="current" value="index"></put-attribute>
     </definition>
     
     <definition name="login" extends="common">
-         <put-attribute name="title" value="Gestion des ateliers" />
+         <put-attribute name="title" value="Login" />
     	 <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
     	 <put-attribute name="current" value="index"></put-attribute>
     </definition>
     
 	<definition name="register" extends="common">
-         <put-attribute name="title" value="Gestion des ateliers" />
+         <put-attribute name="title" value="Register" />
     	 <put-attribute name="body" value="/WEB-INF/jsp/register.jsp" />
     	 <put-attribute name="current" value="index"></put-attribute>
     </definition>

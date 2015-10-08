@@ -5,25 +5,19 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
-public class TaskState {
+public class Role {
 
 	@Id
 	@GeneratedValue
 	private int id;
 	
-	private int name;
+	private String name;
 	
-	@OneToMany(targetEntity=Task.class,mappedBy="task_state")
-	private List<Task> tasks;
-	
-	@ManyToOne
-	private Dashboard dashboard;
+	@ManyToMany(mappedBy="roles")
+	private List<User> users;
 
 	public int getId() {
 		return id;
@@ -33,12 +27,21 @@ public class TaskState {
 		this.id = id;
 	}
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
 	
 }

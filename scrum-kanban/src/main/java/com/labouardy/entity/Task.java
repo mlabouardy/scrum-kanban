@@ -3,7 +3,10 @@ package com.labouardy.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Task {
@@ -20,7 +23,7 @@ public class Task {
 	private double left_to_do;
 	
 	@ManyToOne
-	private TaskState taskState;
+	private TaskState task_state;
 
 	public int getId() {
 		return id;
@@ -44,14 +47,6 @@ public class Task {
 
 	public void setBudget(double budget) {
 		this.budget = budget;
-	}
-
-	public TaskState getTaskState() {
-		return taskState;
-	}
-
-	public void setTaskState(TaskState taskState) {
-		this.taskState = taskState;
 	}
 
 	public double getConsumed_time() {

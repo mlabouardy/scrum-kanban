@@ -1,0 +1,64 @@
+<ul class="lists-tasks">
+	<li>
+		<div class="list-title">
+			To do<a href="#" class="btn btn-primary pull-right btn-padding-title"
+				data-toggle="modal" data-target="#addTaskForm"><i
+				class="fa fa-calendar-plus-o"></i></a>
+		</div>
+		<div>
+			<ul class="tasks" ng-repeat="tasklist1 in list1">
+				<li><a href="#">
+						<div class="task-title">{{tasklist1.name}}</div>
+						<div class="task-time">
+							<ul>
+								<li>{{tasklist1.budget}}</li>
+								<li>{{tasklist1.consumed}}</li>
+								<li>{{tasklist1.left_to_do}}</li>
+							</ul>
+						</div>
+				</a></li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<div class="list-title">
+			In progress<a href="#"
+				class="btn btn-primary pull-right btn-padding-title"><i
+				class="fa fa-calendar-plus-o"></i></a>
+		</div>
+		<div>
+			<ul class="tasks" ng-repeat="tasklist2 in list2">
+				<li><a href="#">
+						<div class="task-title">{{tasklist2.name}}</div>
+						<div class="task-time">
+							<ul>
+								<li>{{tasklist2.budget}}</li>
+								<li>{{tasklist2.consumed}}</li>
+								<li>{{tasklist2.left_to_do}}</li>
+							</ul>
+						</div>
+				</a></li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<div class="list-title">
+			Done<a href="#" class="btn btn-primary pull-right btn-padding-title"><i
+				class="fa fa-calendar-plus-o"></i></a>
+		</div>
+		<div>
+			<ul class="tasks" ng-repeat="tasklist3 in list3">
+				<li><a href="#">
+						<div class="task-title">{{tasklist3.name}}</div>
+						<div class="task-time">
+							<ul>
+								<li>{{tasklist3.budget}}</li>
+								<li>{{tasklist3.consumed}}</li>
+								<li>{{tasklist3.left_to_do}}</li>
+							</ul>
+						</div>
+				</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
