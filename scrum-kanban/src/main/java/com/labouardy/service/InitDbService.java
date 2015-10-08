@@ -22,29 +22,45 @@ public class InitDbService {
 	@Autowired
 	private TaskService taskService;
 	
+	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private TaskStateService taskStateService;
+	
+	@Autowired
+	private DashboardService dashboardService;
+	
 	@PostConstruct
 	public void init(){
 		Role admin=new Role();
 		admin.setName("Admin");
+		roleService.save(admin);
 		
 		Role developper=new Role();
 		developper.setName("Developper");
+		roleService.save(developper);
 		
 		User mohamed=new User();
 		mohamed.setUsername("Mohamed");
 		mohamed.setEmail("mohamed@labouardy.com");
 		mohamed.setRole(admin);
+		userService.save(mohamed);
 		
 		User yazid=new User();
 		yazid.setUsername("Yazid");
 		yazid.setEmail("yazid@labouardy.com");
 		yazid.setRole(developper);
+		userService.save(yazid);
 		
 		User vincent=new User();
 		vincent.setUsername("Vincent");
 		vincent.setEmail("vincent@labouardy.com");
 		vincent.setRole(developper);
-		
+		userService.save(vincent);
 		
 		Task task=new Task();
 		task.setName("View");
@@ -67,6 +83,7 @@ public class InitDbService {
 		t.add(task);
 		t.add(task2);
 		list1_db1.setTasks(t);
+		taskStateService.save(list1_db1);
 		
 		TaskState list1_db2=new TaskState();
 		list1_db1.setName("To do");
@@ -74,6 +91,7 @@ public class InitDbService {
 		tt.add(task);
 		tt.add(task2);
 		list1_db2.setTasks(tt);
+		taskStateService.save(list1_db2);
 		
 		Dashboard db=new Dashboard();
 		db.setName("Scrum Manager");
@@ -86,6 +104,7 @@ public class InitDbService {
 		l.add(list1_db1);
 		db.setUsers(users);
 		db.setTask_states(l);
+		dashboardService.save(db);
 		
 		Dashboard db2=new Dashboard();
 		db2.setName("Forms Drawer");
@@ -98,6 +117,7 @@ public class InitDbService {
 		l2.add(list1_db2);
 		db2.setUsers(users2);
 		db2.setTask_states(l2);
+		dashboardService.save(db2);
 		
 	}
 }
