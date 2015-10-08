@@ -25,6 +25,22 @@ public class Dashboard {
 	@OneToMany(targetEntity=TaskState.class,mappedBy="dashboard")
 	private List<TaskState> task_states;
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public List<TaskState> getTask_states() {
+		return task_states;
+	}
+
+	public void setTask_states(List<TaskState> task_states) {
+		this.task_states = task_states;
+	}
+
 	public int getId() {
 		return id;
 	}

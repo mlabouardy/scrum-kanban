@@ -64,6 +64,14 @@ public class Task {
 	public void setLeft_to_do(double left_to_do) {
 		this.left_to_do = left_to_do;
 	}
+
+	public TaskState getTask_state() {
+		return task_state;
+	}
+
+	public void setTask_state(TaskState task_state) {
+		this.task_state = task_state;
+	}
 	
 	
 }

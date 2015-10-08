@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Role {
@@ -16,7 +17,7 @@ public class Role {
 	
 	private String name;
 	
-	@ManyToMany(mappedBy="roles")
+	@OneToMany(targetEntity=User.class,mappedBy="role")
 	private List<User> users;
 
 	public int getId() {

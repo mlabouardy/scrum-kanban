@@ -11,22 +11,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.labouardy.entity.Task</entity-name>
+		<entity-name>com.labouardy.entity.Role</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>206</entity-height>
-		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>-19</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>217</entity-X-Coordinate>
+		<entity-Y-Coordinate>375</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>com.labouardy.entity.Role</entity-name>
+		<entity-name>com.labouardy.entity.Dashboard</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>217</entity-X-Coordinate>
-		<entity-Y-Coordinate>375</entity-Y-Coordinate>
+		<entity-height>186</entity-height>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>210</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -44,11 +44,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.labouardy.entity.Dashboard</entity-name>
+		<entity-name>com.labouardy.entity.Task</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>186</entity-height>
+		<entity-height>206</entity-height>
 		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>210</entity-Y-Coordinate>
+		<entity-Y-Coordinate>-19</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class User {
@@ -19,9 +20,8 @@ public class User {
 	
 	private String email;
 	
-	@ManyToMany
-	@JoinTable
-	private List<Role> roles;
+	@ManyToOne
+	private Role role;
 	
 	@ManyToMany
 	@JoinTable
@@ -51,12 +51,20 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Dashboard> getDashboards() {
+		return dashboards;
+	}
+
+	public void setDashboards(List<Dashboard> dashboards) {
+		this.dashboards = dashboards;
 	}
 	
 	

@@ -17,7 +17,7 @@ public class TaskState {
 	@GeneratedValue
 	private int id;
 	
-	private int name;
+	private String name;
 	
 	@OneToMany(targetEntity=Task.class,mappedBy="task_state")
 	private List<Task> tasks;
@@ -33,12 +33,28 @@ public class TaskState {
 		this.id = id;
 	}
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
+
+	public Dashboard getDashboard() {
+		return dashboard;
+	}
+
+	public void setDashboard(Dashboard dashboard) {
+		this.dashboard = dashboard;
 	}
 	
 }
