@@ -40,6 +40,5 @@
 
 	<jpa:repositories base-package="com.labouardy.repository"></jpa:repositories>
 
-	
 
 </beans>

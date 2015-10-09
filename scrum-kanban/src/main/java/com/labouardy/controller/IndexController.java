@@ -11,11 +11,6 @@ public class IndexController {
 		return "login";
 	}
 	
-	@RequestMapping("/register")
-	public String register(){
-		return "register";
-	}
-	
 	@RequestMapping("/index")
 	public String home(){
 		return "index";
