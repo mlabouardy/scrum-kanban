@@ -5,27 +5,27 @@ var scrumManager = angular.module('scrumManager', ['ngRoute']);
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 		$routeProvider
 			.when('/',{
-				templateUrl:'/resources/partials/dashboards.html',
+				templateUrl:'dashboards.html',
 				controller:'dashboardsCtrl'
 			})
 			.when('/dashboard/:id',{
-				templateUrl:'/resources/partials/dashboard.html',
+				templateUrl:'dashboard.html',
 				controller:'dashboardCtrl'
 			})
 			.when('/diagrams',{
-				templateUrl:'/resources/partials/diagrams.html',
+				templateUrl:'diagrams.html',
 				controller:'dashboardCtrl'
 			})
 			.when('/team',{
-				templateUrl:'/resources/partials/team.html',
+				templateUrl:'team.html',
 				controller:'teamCtrl'
 			})
 			.when('/files',{
-				templateUrl:'/resources/partials/files.html',
+				templateUrl:'files.html',
 				controller:'filesCtrl'
 			})
 			.when('/settings',{
-				templateUrl:'/resources/partials/settings.html',
+				templateUrl:'settings.html',
 				controller:'dashboardCtrl'
 			})
 			.otherwise({redirectTo:'/'});

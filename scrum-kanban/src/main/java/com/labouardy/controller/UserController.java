@@ -1,6 +1,9 @@
 package com.labouardy.controller;
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +35,13 @@ public class UserController {
 		}
 		userService.save(user);
 		return "redirect:/register.html?success=true";
+	}
+	
+
+	@RequestMapping("/board")
+	public String home(Model model,Principal principal){
+		int id_user=userService.findUserIdByName(principal.getName());
+		model.addAttribute("id_user", id_user);
+		return "board";
 	}
 }

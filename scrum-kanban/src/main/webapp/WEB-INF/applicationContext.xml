@@ -41,4 +41,6 @@
 	<jpa:repositories base-package="com.labouardy.repository"></jpa:repositories>
 
 
+	<import resource="security.xml"/>
+ 
 </beans>

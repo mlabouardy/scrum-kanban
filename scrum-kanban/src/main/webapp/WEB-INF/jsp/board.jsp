@@ -9,9 +9,10 @@
 		<li><a href="#/files"><i class="fa fa-files-o"></i>Files</a></li>
 		<li><a href="#/settings"><i class="fa fa-cogs"></i>Settings</a></li>
 		<br/>
-		<li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+		<li><a href="<spring:url value="/logout"/>"><i class="fa fa-sign-out"></i>Logout</a></li>
 	</ul>
 </div>
+
 <div class="content-body">
 	<div ng-view></div>
 </div>

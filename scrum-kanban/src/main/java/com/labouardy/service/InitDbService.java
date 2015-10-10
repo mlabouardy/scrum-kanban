@@ -36,6 +36,50 @@ public class InitDbService {
 	
 	@PostConstruct
 	public void init(){
+		Task model=new Task();
+		model.setName("Model");
+		model.setBudget(4);
+		model.setConsumed_time(2);
+		model.setLeft_to_do(1);
+		taskService.save(model);
+		
+		Task view=new Task();
+		view.setName("View");
+		view.setBudget(7);
+		view.setConsumed_time(2.5);
+		view.setLeft_to_do(3);
+		taskService.save(view);
+	
+		TaskState todo=new TaskState();
+		todo.setName("To do");
+		taskStateService.save(todo);
+		
+		TaskState inprogress=new TaskState();
+		inprogress.setName("In progress");
+		taskStateService.save(inprogress);
+		
+		TaskState done=new TaskState();
+		done.setName("Done");
+		taskStateService.save(done);
+		
+		List<TaskState> lt=new ArrayList<TaskState>();
+		lt.add(todo);
+		lt.add(inprogress);
+		lt.add(done);
+		
+		
+		Dashboard db=new Dashboard();
+		db.setName("Scrum Manager");
+		db.setDescription("Bla bla bal bla");
+		db.setTask_states(lt);
+		dashboardService.save(db);
+		
+		Dashboard db2=new Dashboard();
+		db2.setName("Forms Drawer");
+		db2.setDescription("Bla bla bal bla");
+		db2.setTask_states(lt);
+		dashboardService.save(db2);
+		
 		Role admin=new Role();
 		admin.setName("Admin");
 		roleService.save(admin);
@@ -44,80 +88,31 @@ public class InitDbService {
 		developper.setName("Developper");
 		roleService.save(developper);
 		
+		List<Dashboard> l=new ArrayList<Dashboard>();
+		l.add(db);
+		l.add(db2);
+		
 		User mohamed=new User();
-		mohamed.setUsername("Mohamed");
+		mohamed.setUsername("root");
 		mohamed.setEmail("mohamed@labouardy.com");
+		mohamed.setPassword("root");
 		mohamed.setRole(admin);
+		mohamed.setDashboards(l);
 		userService.save(mohamed);
 		
 		User yazid=new User();
 		yazid.setUsername("Yazid");
 		yazid.setEmail("yazid@labouardy.com");
 		yazid.setRole(developper);
+		yazid.setDashboards(l);
 		userService.save(yazid);
 		
 		User vincent=new User();
 		vincent.setUsername("Vincent");
 		vincent.setEmail("vincent@labouardy.com");
 		vincent.setRole(developper);
+		vincent.setDashboards(l);
 		userService.save(vincent);
-		
-		Task task=new Task();
-		task.setName("View");
-		task.setBudget(4);
-		task.setLeft_to_do(2);
-		task.setConsumed_time(1);
-		taskService.save(task);
-		
-		Task task2=new Task();
-		task2.setName("Controller");
-		task2.setBudget(7);
-		task2.setLeft_to_do(3);
-		task2.setConsumed_time(4);
-		taskService.save(task2);
-		
-		
-		TaskState list1_db1=new TaskState();
-		list1_db1.setName("To do");
-		List<Task> t=new ArrayList();
-		t.add(task);
-		t.add(task2);
-		list1_db1.setTasks(t);
-		taskStateService.save(list1_db1);
-		
-		TaskState list1_db2=new TaskState();
-		list1_db1.setName("To do");
-		List<Task> tt=new ArrayList();
-		tt.add(task);
-		tt.add(task2);
-		list1_db2.setTasks(tt);
-		taskStateService.save(list1_db2);
-		
-		Dashboard db=new Dashboard();
-		db.setName("Scrum Manager");
-		db.setDescription("Bla bla bal bla");
-		List<User> users=new ArrayList<User>();
-		users.add(mohamed);
-		users.add(yazid);
-		users.add(vincent);
-		List<TaskState> l=new ArrayList<TaskState>();
-		l.add(list1_db1);
-		db.setUsers(users);
-		db.setTask_states(l);
-		dashboardService.save(db);
-		
-		Dashboard db2=new Dashboard();
-		db2.setName("Forms Drawer");
-		db2.setDescription("Bla bla bal bla");
-		List<User> users2=new ArrayList<User>();
-		users2.add(mohamed);
-		users2.add(yazid);
-		users2.add(vincent);
-		List<TaskState> l2=new ArrayList<TaskState>();
-		l2.add(list1_db2);
-		db2.setUsers(users2);
-		db2.setTask_states(l2);
-		dashboardService.save(db2);
 		
 	}
 }

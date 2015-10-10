@@ -285,7 +285,7 @@
 				<version>9.3.4.RC0</version>
 				<configuration>
 					<httpConnector>
-						<port>8085</port>
+						<port>8084</port>
 					</httpConnector>
 				</configuration>
 			</plugin>

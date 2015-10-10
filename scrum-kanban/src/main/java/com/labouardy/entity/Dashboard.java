@@ -2,11 +2,19 @@ package com.labouardy.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Dashboard {
@@ -19,9 +27,11 @@ public class Dashboard {
 	
 	private String description;
 
+	@JsonIgnore
 	@ManyToMany(mappedBy="dashboards")
 	private List<User> users;
 	
+	@JsonIgnore
 	@OneToMany(targetEntity=TaskState.class,mappedBy="dashboard")
 	private List<TaskState> task_states;
 	
